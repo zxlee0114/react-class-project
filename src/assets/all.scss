@@ -1,7 +1,15 @@
 // 在 React 安裝 sass：在終端機輸入 npm add -D sass
 // PS. 如果是在 vue 環境，則是輸入 npm add -D sass-embedded
 // -D → package.json → devDependencies（只有在開發環境中會用到）
-$primary-bg: limegreen;
-body{
-    background-color: $primary-bg;
-}
+
+@import "bootstrap/scss/functions";
+// 1. 挑出你要自定義的變數修改
+$primary: Turquoise;
+
+@import "./variables"; // 2. 直接到複製的 _variables 修改希望自定義的變數
+@import "bootstrap/scss/bootstrap";
+
+// $primary-bg: limegreen;
+// body{
+//     background-color: $primary-bg;
+// }
