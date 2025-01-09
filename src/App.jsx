@@ -19,9 +19,13 @@ function App() {
     customModal.current.hide()
   }
 
+  console.log(import.meta.env.VITE_APP_PATH); // 環境變數
+  const { VITE_APP_PATH } = import.meta.env;
+
   useEffect(() => {
     (async () => {
-      const response = await axios.get("https://randomuser.me/api/");
+      // const response = await axios.get("https://randomuser.me/api/");
+      const response = await axios.get(VITE_APP_PATH);
       console.log(response);
       openModal();
       setTimeout(() => {
