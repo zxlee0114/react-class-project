@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+// 建議外部資源先放，內部資源往後放
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    (async () =>{
+      const response = await axios.get("https://randomuser.me/api/")
+      console.log(response)
+    })()
+  },[])
 
   return (
     <>
